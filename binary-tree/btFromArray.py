@@ -45,6 +45,7 @@ def bst(val):
 
 bst(root)
 
+
 print(res)      
 
 
