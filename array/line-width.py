@@ -15,7 +15,7 @@ while i<len(sa):
             break
         print(sa[i], end="")
         i +=1
-        if i in range(len(sa)) and lw-len(sa[i])+1 >-1:
+        if i in range(len(sa)) and lw>=len(sa[i]):
             print("", end=" ")
             lw -=1
 

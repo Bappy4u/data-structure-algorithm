@@ -1,12 +1,28 @@
-class TreeNode:
+class Node:
      def __init__(self, val=0, left=None, right=None):
          self.val = val
          self.left = left
          self.right = right
 
 
-arr = [1,2,3,4,5,6,7]
-root = TreeNode(arr[0])
+
+
+"""class Tree:
+    def __init__(self, root) -> None:
+        self.__root = Node(root)
+
+    def addNode(self,val):
+        root = self.getRoot()
+
+
+    def getRoot(self):
+        return self.__root
+    
+"""
+    
+    
+arr = [3,5,2,1,4,6,7]
+root = Node(arr[0])
 
 que = [root]
 i = 0
@@ -21,32 +37,33 @@ while i<len(arr):
         i +=1
         if i==len(arr):
             break
-        x.left = TreeNode(arr[i])
+        x.left = Node(arr[i])
         res.append(arr[i])
         i +=1
         if i==len(arr):
             break
-        x.right = TreeNode(arr[i])
+        x.right = Node(arr[i])
         res.append(arr[i])
 
         que.append(x.left)
         que.append(x.right)
 
-print(len(res))
+
 
 
 res = []   
-def bst(val):
-    if val:
-        bst(val.left)
-        res.append(val.val)
-        bst(val.right)
+def height(root):
+    if not root:
+        return 0
+
+    left=  height(root.left)
+    right=  height(root.right)
+    
+    return 1+ max(left,right)
         
 
-bst(root)
 
-
-print(res)      
+print(f" height: {height(root)}")      
 
 
 
