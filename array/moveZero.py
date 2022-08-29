@@ -9,9 +9,7 @@ def zero(nums):
     
     while current>=0:
         nums[current]=0
-        current -=1
+        current -=1 
 
 
     return nums
-
-print(zero([6,0,1,0,5]))
